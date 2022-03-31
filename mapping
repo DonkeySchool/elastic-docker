@@ -1,0 +1,23 @@
+{
+    "dynamic": false,
+    "properties": {
+      "sku": { "type": "keyword" },
+      "name": { "type": "text", "boost": 5 },
+      "type": { "type": "keyword" },
+      "price": { "type": "float" },
+      "upc": { "type": "keyword" },
+      "category": {
+        "type": "nested",
+        "properties": {
+          "id": { "type": "keyword" },
+          "name": { "type": "keyword" }
+        }
+      },
+      "shipping": { "type": "float" },
+      "description": { "type": "text" },
+      "manufacturer": { "type": "keyword" },
+      "model": { "type": "keyword" },
+      "url":  { "type": "text", "index": false },
+      "image":  { "type": "text", "index": false }
+    }
+  }

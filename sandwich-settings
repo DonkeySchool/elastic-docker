@@ -63,3 +63,28 @@ PUT /sandwich/_mapping
       }
     }
   }
+  
+  
+POST /sandwich/_doc
+{
+  "name": "Hamburger",
+  "description": "Un hamburger, parfois hambourgeois (au Canada francophone) 
+ou par aphérèse burger, est un sandwich d'origine allemande, composé de deux 
+pains de forme ronde (bun) parfois garnis de viande hachée (souvent du bœuf) 
+et généralement de crudités — salade, tomate, oignon, cornichon (pickles) —, 
+de fromage et de sauce. C'est un plat typique de la restauration rapide, 
+emblématique de la cuisine américaine."
+}
+
+
+POST /sandwich/_doc
+{
+  "name": "Burrito",
+  "description": "Un burrito est une préparation culinaire remontant à la fin 
+du xixe siècle originaire du Mexique. D'invention récente, le burrito n'est 
+pas un plat de la cuisine traditionnelle mexicaine. Il se compose d'une tortilla 
+de farine de blé garnie de divers ingrédients tels que de la viande de bœuf, 
+des haricots, des tomates, des épices, du piment, de l'oignon, de la salade, etc. 
+On ne frit pas la tortilla, elle ne sert que d'enveloppe à son contenu. 
+S'il était frit, le burrito deviendrait une chimichanga."
+}

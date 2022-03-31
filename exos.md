@@ -133,3 +133,63 @@ GET /products3/_search
     }
   }
 }
+
+
+5 / par nom + prix entre 5 et 10 - marques Lenmar et PNY + categorie   "Rechargeable Batteries"
+
+GET /products3/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "name": {
+              "query": "battery",
+              "fuzziness": 1
+            }
+          }
+        },
+        {
+          "nested": {
+            "path": "category",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "match": {
+                      "category.name": {
+                        "query": "Rechargeable Batteries",
+                        "operator": "and"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "terms": {
+            "manufacturer": [
+              "Lenmar",
+              "PNY"
+            ]
+          }
+        }
+      ],
+      "filter": [
+        {
+          "range": {
+            "price": {
+              "gte": 5,
+              "lte": 10
+            }
+          }
+        }
+      ]
+    }
+  }
+}

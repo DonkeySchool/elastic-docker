@@ -47,3 +47,19 @@ PUT sandwich
     }
   }
 }
+
+PUT /sandwich/_mapping
+{
+    "properties": {
+      "description": {
+        "type": "text",
+        "analyzer": "french_light",
+        "fields": {
+          "stemmed": {
+            "type": "text",
+            "analyzer": "french_heavy"
+          }
+        }
+      }
+    }
+  }
